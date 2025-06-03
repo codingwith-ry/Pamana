@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" type="text/css" href="~/Content/materialize.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+</head>
+<body ng-app="Pamana" ng-controller="PamanaController">
+
+    <nav id="pamanaNav">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo"><img src="~/Content/PAMANA.png" width="180px" /></a>
+            <ul id="nav-mobile" class="right">
+                <li><a id="tab" href="@Url.Action("Index", "Home")">Home</a></li>
+                <li><a id="tab" href="@Url.Action("About", "Home")">About</a></li>
+                <li><a id="tab" href="@Url.Action("ReserveNow", "Home")">Reserve Now</a></li>
+                <li><a id="tab" href="@Url.Action("Login", "Home")">Log In</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div>
+        @RenderBody()
+    </div>
+
+    <footer class="page-footer" id="pamanaFooter">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">PAMANA</h5>
+                    <p class="grey-text text-lighten-4">Located at Bldg. B, By the Bay, Mall of Asia Complex, Pasay City</p><br />
+                    <p class="grey-text text-lighten-4"><i class="tiny material-icons">local_phone</i> (02) 8834-0967</p>
+                    <p class="grey-text text-lighten-4"><i class="tiny material-icons">local_phone</i> +639 098 6391 432</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <p id="login-footer" class="grey-text text-lighten-3">Log In or Sign Up to receive important announcements.</p><br />
+                    <a href="@Url.Action("Login", "Home")" id="login-btn" class="waves-effect waves-light btn">Log In </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-copyright">
+            <div class="container">
+                © 2024 Pamana
+                <a class="grey-text text-lighten-4 right">All rights reserved</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Initialize Time Picker
+            var timeElems = document.querySelectorAll('.timepicker');
+            var timeInstances = M.Timepicker.init(timeElems, {
+                defaultTime: 'now',
+                twelveHour: true, // If you want to use 24-hour format
+            });
+
+            // Initialize Date Picker
+            var dateElems = document.querySelectorAll('.datepicker');
+            var dateInstances = M.Datepicker.init(dateElems, {
+                format: 'mmm dd, yyyy', // Define the date format
+                autoClose: true, // Close the datepicker automatically after selecting a date
+            });
+        });
+    </script>
+    <script src="~/Scripts/jquery-3.7.0.min.js"></script>
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/materialize.js"></script>
+    <script src="~/Scripts/AngularScripts/Module.js"></script>
+    <script src="~/Scripts/AngularScripts/Service.js"></script>
+    <script src="~/Scripts/AngularScripts/Controller.js"></script>
+</body>
+</html>

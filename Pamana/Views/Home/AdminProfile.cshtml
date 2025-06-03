@@ -1,0 +1,97 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div style="display: flex;">
+    <div class="main-content" style="flex: 1; display: flex; justify-content: center; flex-direction: column;">
+        <div class="col s12" style="padding: 20px">
+            <div class="row" style="display: flex; align-items: center; justify-content: space-between; margin: 30px;">
+                <div>
+                    <h4 style="margin: 0;"><b>Administrator Profile</b></h4>
+                    <p style="margin: 0; padding-bottom: 20px;">Manage your profile and account settings</p>
+                </div>
+            </div>
+
+            <div style="max-width: 1200px; margin: auto;">
+
+                <!-- Profile Header -->
+                <div class="card" style="display: flex; align-items: center; padding: 30px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <img src="https://via.placeholder.com/100" alt="Profile Picture" class="circle" style="width: 100px; height: 100px; margin-right: 20px;">
+                    <div style="flex: 1;">
+                        <h5 style="margin: 0;"><b>Owen Trinidad</b></h5>
+                        <p style="margin: 5px 0; color: gray;">Admin</p>
+                        <p style="margin: 0; color: gray;">Metro Manila, Philippines</p>
+                    </div>
+                </div>
+
+                <!-- Editable Personal Information Section -->
+                <div class="card" style="padding: 30px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <h6 style="margin-bottom: 20px;"><b>Personal Information</b></h6>
+                    <form>
+                        <div class="row">
+                            <div class="input-field col s12 m4">
+                                <input id="first_name" type="text" value="Owen" />
+                                <label for="first_name" class="active">First Name</label>
+                            </div>
+                            <div class="input-field col s12 m4">
+                                <input id="last_name" type="text" value="Trinidad" />
+                                <label for="last_name" class="active">Last Name</label>
+                            </div>
+                            <div class="input-field col s12 m4">
+                                <input id="date_of_birth" type="text" value="06-23-2004" />
+                                <label for="date_of_birth" class="active">Date of Birth</label>
+                            </div>
+                            <div class="input-field col s12 m4">
+                                <input id="email" type="email" value="owen.trinidad@gmail.com" />
+                                <label for="email" class="active">Email Address</label>
+                            </div>
+                            <div class="input-field col s12 m4">
+                                <input id="phone_number" type="text" value="(+63) 912 3456-789" />
+                                <label for="phone_number" class="active">Phone Number</label>
+                            </div>
+                            <div class="input-field col s12 m4">
+                                <input id="user_role" type="text" value="Admin" disabled />
+                                <label for="user_role" class="active">User Role</label>
+                            </div>
+                        </div>
+
+                        <!-- Align Button to Right -->
+                        <div style="text-align: right; margin-top: 20px;">
+                            <button type="submit" class="waves-effect waves-light btn red" style="border-radius: 5px;">Save Changes</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Password Confirmation Section -->
+                <div class="card" style="padding: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <h6 style="margin-bottom: 20px;"><b>Password Confirmation</b></h6>
+                    <form>
+                        <div class="row">
+                            <div class="input-field col s12 m4">
+                                <i class="material-icons prefix">lock</i>
+                                <input id="current_password" type="password" required>
+                                <label for="current_password">Current Password</label>
+                            </div>
+                            <div class="input-field col s12 m4">
+                                <i class="material-icons prefix">lock_outline</i>
+                                <input id="new_password" type="password" required>
+                                <label for="new_password">New Password</label>
+                            </div>
+                            <div class="input-field col s12 m4">
+                                <i class="material-icons prefix">lock_outline</i>
+                                <input id="confirm_password" type="password" required>
+                                <label for="confirm_password">Confirm New Password</label>
+                            </div>
+                        </div>
+
+                        <!-- Align Button to Right -->
+                        <div style="text-align: right; margin-top: 20px;">
+                            <button type="submit" class="waves-effect waves-light btn red" style="border-radius: 5px;">Save Changes</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

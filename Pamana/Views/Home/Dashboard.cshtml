@@ -1,0 +1,309 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div style="display: flex;">
+    <div class="main-content" style="flex: 1; display: flex; justify-content: center; flex-direction: column;">
+        <div class="col s12" style="padding: 50px">
+            <!-- Header, Filters, and Admin Dropdown -->
+            <div class="row" style="display: flex; align-items: center; justify-content: space-between; margin: 0;">
+                <!-- Announcements Title -->
+                <div>
+                    <h4 style="margin: 0;"><b>Dashboard</b></h4>
+                    <p style="margin: 0; padding-bottom: 50px">As of November 2024</p>
+                </div>
+
+                <!-- Filters Section -->
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <select class="browser-default" style="width: 120px;">
+                        <option value="" disabled selected>November</option>
+                        <option value="1">December</option>
+                        <option value="2">January</option>
+                    </select>
+                    <select class="browser-default" style="width: 120px;">
+                        <option value="" disabled selected>2024</option>
+                        <option value="1">2023</option>
+                        <option value="2">2025</option>
+                    </select>
+                </div>
+
+                <!-- Administrator Account Dropdown -->
+                <div>
+                    <a class="dropdown-trigger btn-flat" href="#" data-target="admin-dropdown" style="color: #C30000; display: flex; align-items: center; margin-left: 100%;">
+                        <i class="material-icons left">account_circle</i> Administrator
+                        <i class="material-icons right">arrow_drop_down</i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Dropdown Structure -->
+            <ul id="admin-dropdown" class="dropdown-content">
+                <li><a href="@Url.Action("Profile", "Home")" style="color: #C30000;">Profile</a></li>
+            </ul>
+
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    const dropdowns = document.querySelectorAll('.dropdown-trigger');
+                    M.Dropdown.init(dropdowns, {
+                        alignment: 'right', // Keeps dropdown aligned properly
+                        coverTrigger: false // Prevent dropdown from overlapping trigger
+                    });
+                });
+            </script>
+
+            <!-- Stats Cards -->
+            <div class="row" style="margin-bottom: 20px;">
+                <!-- Card 1 -->
+                <div class="col s12 m6 l3">
+                    <div class="card white black-text" style="margin: 10px;">
+                        <div class="card-content" style="display:flex; align-items:center;">
+                            <i class="material-icons" style="font-size: 75px; margin-right: 15px; color: #C30000;">restaurant</i>
+                            <div>
+                                <span class="card-title"><b>293</b></span>
+                                <p>Reservations</p>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col s12 m6 l3">
+                    <div class="card white black-text" style="margin: 10px;">
+                        <div class="card-content" style="display:flex; align-items:center;">
+                            <i class="material-icons" style="font-size: 75px; margin-right: 15px; color: #C30000;">check_circle</i>
+                            <div>
+                                <span class="card-title"><b>276</b></span>
+                                <p>Successful Reservations</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col s12 m6 l3">
+                    <div class="card white black-text" style="margin: 10px;">
+                        <div class="card-content" style="display:flex; align-items:center;">
+                            <i class="material-icons" style="font-size: 75px; margin-right: 15px; color: #C30000;">cancel</i>
+                            <div>
+                                <span class="card-title"><b>19</b></span>
+                                <p>Cancelled Reservations</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="col s12 m6 l3">
+                    <div class="card white black-text" style="margin: 10px;">
+                        <div class="card-content" style="display:flex; align-items:center;">
+                            <i class="material-icons" style="font-size: 75px; margin-right: 15px; color: #C30000;">event_note</i>
+                            <div>
+                                <span class="card-title"><b>23</b></span>
+                                <p>Upcoming Reservations</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Upcoming Reservations Table -->
+            <div class="row">
+                <div class="col s12">
+                    <div class="card">
+                        <div class="card-content">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span class="card-title">Upcoming Reservations</span>
+                                <a href="@Url.Action("AdminReservations", "Home")" class="waves-effect waves-light btn red">View All</a>
+                            </div>
+                            <table class="highlight">
+                                <thead>
+                                    <tr>
+                                        <th>User</th>
+                                        <th>Reservation Date</th>
+                                        <th>Number of People</th>
+                                        <th>Email</th>
+                                        <th>Contact Number</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Ryan Regulacion</td>
+                                        <td>11/4/2024</td>
+                                        <td>2</td>
+                                        <td>ryan@gmail.com</td>
+                                        <td>09090909090</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Owen Trinidad</td>
+                                        <td>11/5/2024</td>
+                                        <td>2</td>
+                                        <td>owen@gmail.com</td>
+                                        <td>09090909090</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Stephen Hao</td>
+                                        <td>11/6/2024</td>
+                                        <td>1</td>
+                                        <td>stephen@gmail.com</td>
+                                        <td>09090909090</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reservation Statistics Charts -->
+            <div class="row">
+                <div class="col s12">
+                    <div class="card">
+                        <div class="card-content">
+                            <span class="card-title">Reservation Statistics</span>
+                            <div class="row">
+                                <!-- Tabs -->
+                                <div class="col s12">
+                                    <ul class="tabs">
+                                        <li class="tab col s3"><a href="#chart1">Reservations</a></li>
+                                        <li class="tab col s3"><a href="#chart2">Successful Reservations</a></li>
+                                        <li class="tab col s3"><a href="#chart3">Cancelled Reservations</a></li>
+                                        <li class="tab col s3"><a href="#chart4">Feedbacks</a></li>
+                                    </ul>
+                                </div>
+
+                                <!-- Tab 1 -->
+                                <div id="chart1" class="col s12">
+                                    <div>
+                                        <canvas id="myChart1"></canvas>
+                                    </div>
+                                </div>
+
+                                <!-- Tab 2 -->
+                                <div id="chart2" class="col s12">
+                                    <div>
+                                        <canvas id="myChart2"></canvas>
+                                    </div>
+                                </div>
+
+                                <!-- Tab 3 -->
+                                <div id="chart3" class="col s12">
+                                    <div>
+                                        <canvas id="myChart3"></canvas>
+                                    </div>
+                                </div>
+
+                                <!-- Tab 4 -->
+                                <div id="chart4" class="col s12">
+                                    <div>
+                                        <canvas id="myChart4"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                            <script>
+                                document.addEventListener('DOMContentLoaded', function () {
+                                    const tabs = document.querySelectorAll('.tabs');
+                                    M.Tabs.init(tabs);
+                                });
+
+                                const chartData = [
+                                    { id: 'myChart1', data: [12, 19, 3, 5, 2, 3, 8] },
+                                    { id: 'myChart2', data: [8, 15, 4, 6, 9, 7, 5] },
+                                    { id: 'myChart3', data: [10, 5, 13, 2, 8, 6, 4] },
+                                    { id: 'myChart4', data: [7, 10, 2, 9, 11, 5, 3] }
+                                ];
+
+                                chartData.forEach(chart => {
+                                    const ctx = document.getElementById(chart.id).getContext('2d');
+                                    new Chart(ctx, {
+                                        type: 'bar',
+                                        data: {
+                                            labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+                                            datasets: [{
+                                                label: '# of Reservations',
+                                                data: chart.data,
+                                                backgroundColor: '#C30000',
+                                                borderColor: '#C30000',
+                                                borderWidth: 0.5
+                                            }]
+                                        },
+                                        options: {
+                                            responsive: true,
+                                            scales: {
+                                                y: {
+                                                    beginAtZero: true
+                                                }
+                                            }
+                                        }
+                                    });
+                                });
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Announcements and Feedbacks -->
+            <div class="row">
+                <div class="col s12 m6">
+                    <div class="card">
+                        <div class="card-content">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <h5>Recent Announcements</h5>
+                                <a href="@Url.Action("AdminAnnouncements", "Home")" class="waves-effect waves-light btn red">View All</a>
+                            </div>
+                            <ul class="collection">
+                                <li class="collection-item">
+                                    <span>Pamana Website Maintenance</span>
+                                    <br />
+                                    <small>11/04/2024</small>
+                                </li>
+                                <li class="collection-item">
+                                    <span>Introducing Our New Menu Items!</span>
+                                    <br />
+                                    <small>11/10/2024</small>
+                                </li>
+                                <li class="collection-item">
+                                    <span>Holiday Operating Hours Announced</span>
+                                    <br />
+                                    <small>11/15/2024</small>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m6">
+                    <div class="card">
+                        <div class="card-content">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <h5>Recent Feedbacks</h5>
+                                <a href="@Url.Action("AdminFeedbacks", "Home")" class="waves-effect waves-light btn red">View All</a>
+                            </div>
+                            <ul class="collection">
+                                <li class="collection-item">
+                                    <span>"The food was amazing, especially the sisig!"</span>
+                                    <br />
+                                    <small>- Carlos Yulo</small>
+                                </li>
+                                <li class="collection-item">
+                                    <span>"Great ambiance and friendly staff."</span>
+                                    <br />
+                                    <small>- Chloe San Jose</small>
+                                </li>
+                                <li class="collection-item">
+                                    <span>"Highly recommend the kare-kare."</span>
+                                    <br />
+                                    <small>- Queen Dura</small>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+</div>

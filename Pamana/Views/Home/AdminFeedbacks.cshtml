@@ -1,0 +1,181 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div style="display: flex;">
+    <div class="main-content" style="flex: 1; display: flex; justify-content: center; flex-direction: column;">
+        <!-- Main Content -->
+        <div class="col s12" style="padding: 50px">
+            <div class="row" style="display: flex; align-items: center; justify-content: space-between; margin: 0;">
+                <!-- Feedbacks Header -->
+                <div>
+                    <h4 style="margin: 0;"><b>Feedbacks</b></h4>
+                    <p style="margin: 0; padding-bottom: 30px;">As of November 2024</p>
+                </div>
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <select class="browser-default" style="width: 120px;">
+                        <option value="" disabled selected>November</option>
+                        <option value="1">December</option>
+                        <option value="2">January</option>
+                    </select>
+                    <select class="browser-default" style="width: 120px;">
+                        <option value="" disabled selected>2024</option>
+                        <option value="1">2023</option>
+                        <option value="2">2025</option>
+                    </select>
+                </div>
+                <div style="display: flex; align-items: center;">
+                    <a class="dropdown-trigger btn-flat" href="#" data-target="admin-dropdown" style="color: #C30000; display: flex; align-items: center; margin-left: 105%;">
+                        <i class="material-icons left">account_circle</i> Administrator
+                        <i class="material-icons right">arrow_drop_down</i>
+                    </a>
+                </div>
+            </div>
+            <ul id="admin-dropdown" class="dropdown-content">
+                <li><a href="@Url.Action("Profile", "Home")" style="color: #C30000;">Profile</a></li>
+            </ul>
+
+            <ul class="collapsible" style="margin-top: 30px;">
+                <!-- Example Feedback 1 -->
+                <li>
+                    <div class="collapsible-header" style="display: flex; align-items: center;">
+                        <img src="~/Content/carlos yulo.jpeg" alt="Profile Picture" style="width: 50px; height: 50px; border-radius: 50%; margin-right: 15px;">
+                        <div>
+                            <b>Carlos Yulo</b>
+                            <p style="margin: 0; font-size: 12px; color: gray;">Submitted On: 12/08/2024</p>
+                        </div>
+                    </div>
+                    <div class="collapsible-body" style="display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div class="row">
+                            <div class="col s10 m10 l10">
+                                <div style="flex: 1; padding-right: 10px;">
+                                    <p>
+                                        <b>Feedback:</b> The food was absolutely amazing, especially the sisig!
+                                        It was perfectly seasoned, with just the right balance of flavors.
+                                        The texture was crispy on the outside yet tender inside, making every
+                                        bite incredibly satisfying. The presentation was also top-notch, and the
+                                        portion size was generous. Overall, it was an unforgettable dining experience,
+                                        and I would definitely recommend it to anyone looking for authentic and delicious Filipino cuisine!
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col s2 m2 l2">
+                                <div style="flex: 0; text-align: right; display: flex; flex-direction: column; align-items: flex-end;">
+                                    <p><b>Rating:</b></p>
+                                    <div style="color: #FF9800; display: flex; gap: 5px;">
+                                        <!-- Star Rating (Horizontal Alignment) -->
+                                        <span class="material-icons">star</span>
+                                        <span class="material-icons">star</span>
+                                        <span class="material-icons">star</span>
+                                        <span class="material-icons">star</span>
+                                        <span class="material-icons">star_border</span>
+                                    </div>
+                                    <p style="font-size: 12px; color: gray;">4/5</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                </li>
+                <!-- Example Feedback 2 -->
+                <li>
+                    <div class="collapsible-header" style="display: flex; align-items: center;">
+                        <img src="~/Content/chloe.jpg" alt="Profile Picture" style="width: 50px; height: 50px; border-radius: 50%; margin-right: 15px;">
+                        <div>
+                            <b>Chloe San Jose</b>
+                            <p style="margin: 0; font-size: 12px; color: gray;">Submitted On: 12/07/2024</p>
+                        </div>
+                    </div>
+                    <div class="collapsible-body" style="display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div class="row">
+                            <div class="col s10 m10 l10">
+                                <div style="flex: 1; padding-right: 10px;">
+                                    <p>
+                                        <b>Feedback:</b> Great ambiance and friendly staff! The atmosphere was warm and inviting,
+                                        with a cozy yet vibrant setting that made the whole dining experience even more enjoyable.
+                                        The staff was attentive and made sure we felt welcomed from the moment we walked in.
+                                        They were knowledgeable about the menu and offered great recommendations. It was clear
+                                        that they genuinely cared about providing excellent service, which made the visit even
+                                        more memorable. I’ll definitely be coming back for both the food and the fantastic service!
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col s2 m2 l2">
+                                <div style="flex: 0; text-align: right; display: flex; flex-direction: column; align-items: flex-end;">
+                                    <p><b>Rating:</b></p>
+                                    <div style="color: #FF9800; display: flex; gap: 5px;">
+                                        <!-- Star Rating (Horizontal Alignment) -->
+                                        <span class="material-icons">star</span>
+                                        <span class="material-icons">star</span>
+                                        <span class="material-icons">star</span>
+                                        <span class="material-icons">star_border</span>
+                                        <span class="material-icons">star_border</span>
+                                    </div>
+                                    <p style="font-size: 12px; color: gray;">3/5</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <!-- Example Feedback 3 -->
+                <li>
+                    <div class="collapsible-header" style="display: flex; align-items: center;">
+                        <img src="~/Content/queen.jpg" alt="Profile Picture" style="width: 50px; height: 50px; border-radius: 50%; margin-right: 15px;">
+                        <div>
+                            <b>Queen Dura</b>
+                            <p style="margin: 0; font-size: 12px; color: gray;">Submitted On: 12/07/2024</p>
+                        </div>
+                    </div>
+                    <div class="collapsible-body" style="display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div class="row">
+                            <div class="col s10 m10 l10">
+                                <div style="flex: 1; padding-right: 10px;">
+                                    <p>
+                                        <b>Feedback:</b> Highly recommend the kare-kare! The dish was absolutely delicious,
+                                        with a rich and creamy peanut sauce that was perfectly balanced. The oxtail and
+                                        tripe were tender and cooked to perfection, and the vegetables were fresh and flavorful.
+                                        The bagoong on the side added the perfect touch of umami to elevate the dish even more.
+                                        It’s definitely a standout on the menu and a must-try for anyone who loves traditional
+                                        Filipino comfort food. I can’t wait to have it again!
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col s2 m2 l2">
+                                <div style="flex: 0; text-align: right; display: flex; flex-direction: column; align-items: flex-end;">
+                                    <p><b>Rating:</b></p>
+                                    <div style="color: #FF9800; display: flex; gap: 5px;">
+                                        <!-- Star Rating (Horizontal Alignment) -->
+                                        <span class="material-icons">star</span>
+                                        <span class="material-icons">star</span>
+                                        <span class="material-icons">star</span>
+                                        <span class="material-icons">star_border</span>
+                                        <span class="material-icons">star_border</span>
+                                    </div>
+                                    <p style="font-size: 12px; color: gray;">3/5</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                </li>
+            </ul>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    // Initialize dropdowns
+                    const dropdowns = document.querySelectorAll('.dropdown-trigger');
+                    M.Dropdown.init(dropdowns, {
+                        alignment: 'right', // Align dropdown to the right
+                        coverTrigger: false // Ensure dropdown does not cover the trigger
+                    });
+
+                    // Initialize collapsibles
+                    const collapsibles = document.querySelectorAll('.collapsible');
+                    M.Collapsible.init(collapsibles);
+                });
+            </script>
+        </div>
+    </div>
+</div>

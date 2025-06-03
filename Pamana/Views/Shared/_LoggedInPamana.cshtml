@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" type="text/css" href="~/Content/materialize.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+</head>
+<body ng-app="Pamana" ng-controller="PamanaController" ng-init="loadUser()">
+
+    <nav id="pamanaNav">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo"><img src="~/Content/PAMANA.png" width="180px" /></a>
+            <ul id="nav-mobile" class="right">
+                <li><a id="tab" href="@Url.Action("LoginIndex", "Home")">Home</a></li>
+                <li><a id="tab" href="@Url.Action("LoginAbout", "Home")">About</a></li>
+                <li><a id="tab" href="@Url.Action("LoginReserve", "Home")">Reserve Now</a></li>
+                <li data-target="slide-out" class="sidenav-trigger" style="margin: unset"><a id="tab" class=" center-align valign-wrapper" href="@Url.Action("User", "Home")" style="height: 65px;"><img id="userIcon" src="~/Content/malupiton.jpg" /></a></li>
+            </ul>
+        </div>
+    </nav>
+    <ul id="slide-out" class="sidenav" style="background-color:#A12A2A;">
+        <li>
+            <div class="user-view">
+                <div class="background">
+
+                </div>
+                <a href="#user"><img id="navuserIcon" src="~/Content/defPFP.jpg" /></a>
+                <a class="name" href="#name"><span class="white-text" ng-bind="logFirstN"></span> <span class="white-text" ng-bind="logLastN"></span></a>
+                <a href="#email"><span class="white-text email" ng-bind="logEmail"></span></a>
+            </div>
+        </li>
+        <li><div class="divider"></div></li>
+        <li><a href="@Url.Action("Account", "Home")" id="sideTabs"><i id="sideTabs" class="material-icons">person</i>Account</a></li>
+        <li><a href="@Url.Action("Announcements", "Home")" id="sideTabs"><i id="sideTabs" class="material-icons">notifications</i>Announcements</a></li>
+        <li><a href="@Url.Action("Reservations", "Home")" id="sideTabs"><i id="sideTabs" class="material-icons">event_available</i>Reservations</a></li>
+        <li><a href="@Url.Action("History", "Home")" id="sideTabs"><i id="sideTabs" class="material-icons">restore</i>History</a></li>
+        <li class="footerTab"><a href="@Url.Action("Index", "Home")" id="sideTabs"><i id="sideTabs" class="material-icons">input</i>Log Out</a></li>
+    </ul>
+
+    <div>
+        @RenderBody()
+    </div>
+
+    <footer class="page-footer" id="pamanaFooter">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">PAMANA</h5>
+                    <p class="grey-text text-lighten-4">Located at Bldg. B, By the Bay, Mall of Asia Complex, Pasay City</p><br />
+                    <p class="grey-text text-lighten-4"><i class="tiny material-icons">local_phone</i> (02) 8834-0967</p>
+                    <p class="grey-text text-lighten-4"><i class="tiny material-icons">local_phone</i> +639 098 6391 432</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <p id="login-footer" class="grey-text text-lighten-3">Log In or Sign Up to receive important announcements.</p><br />
+                    <a id="login-btn" class="waves-effect waves-light btn">Log In </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-copyright">
+            <div class="container">
+                © 2024 Pamana
+                <a class="grey-text text-lighten-4 right">All rights reserved</a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems, {
+                edge: 'right'
+
+            });
+
+            var selectElems = document.querySelectorAll('select');
+            var selectInstances = M.FormSelect.init(selectElems);
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.modal');
+            var instances = M.Modal.init(elems);
+        });
+
+        
+    </script>
+    <script src="~/Scripts/jquery-3.7.0.min.js"></script>
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/materialize.js"></script>
+    <script src="~/Scripts/AngularScripts/Module.js"></script>
+    <script src="~/Scripts/AngularScripts/Service.js"></script>
+    <script src="~/Scripts/AngularScripts/Controller.js"></script>
+</body>
+</html>

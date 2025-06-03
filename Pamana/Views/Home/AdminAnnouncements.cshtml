@@ -1,0 +1,342 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div style="display: flex; width: 100%;">
+    <div class="main-content" style="flex: 1; display: flex; justify-content: center; flex-direction: column;">
+        <div class="container" style="padding: 50px; padding-left: 10px; width: 100%;">
+            <div class="row">
+                <!-- Main Content Header -->
+                <div class="col s12" style="padding-bottom: 40px;">
+                    <div class="row" style="display: flex; align-items: center; justify-content: space-between; margin: 0;">
+                        <!-- Announcements Title -->
+                        <div>
+                            <h4 style="margin: 0;"><b>Announcements</b></h4>
+                            <p style="margin: 0;">As of November 2024</p>
+                        </div>
+
+
+                        <!-- Filters Section -->
+                        <div style="display: flex; align-items: center; gap: 15px;">
+                            <select class="browser-default" style="width: 120px;">
+                                <option value="" disabled selected>November</option>
+                                <option value="1">December</option>
+                                <option value="2">January</option>
+                            </select>
+                            <select class="browser-default" style="width: 120px;">
+                                <option value="" disabled selected>2024</option>
+                                <option value="1">2023</option>
+                                <option value="2">2025</option>
+                            </select>
+                        </div>
+
+                        <!-- Admin Dropdown -->
+                        <div>
+                            <a class="dropdown-trigger btn-flat" href="#" data-target="admin-dropdown" style="color: #C30000; display: flex; align-items: center; margin-left: 80%;">
+                                <i class="material-icons left">account_circle</i> Administrator
+                                <i class="material-icons right">arrow_drop_down</i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Dropdown Structure -->
+                    <ul id="admin-dropdown" class="dropdown-content">
+                        <li><a href="@Url.Action("Profile", "Home")" style="color: #C30000;">Profile</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card" style="margin-bottom: 20px;">
+                <div class="card-content" style="display: flex; align-items: center; justify-content: space-between;">
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <i class="material-icons" style="font-size: 75px; margin-right: 15px; color: #C30000;">campaign</i>
+                        <div>
+                            <h6 style="margin: 0; font-weight: bold;">Create Announcement</h6>
+                            <p style="margin: 0;">Notify all customers of new announcements</p>
+                        </div>
+                    </div>
+                    <a href="#create-announcement-modal" class="btn waves-effect waves-light modal-trigger" style="background-color: #C30000;">
+                        Add New Announcement
+                    </a>
+                </div>
+            </div>
+
+            <!-- Announcements Table -->
+            <div class="row">
+                <div class="col s12 m12 l12">
+                    <div class="card announcement-card">
+                        <div class="card-content">
+                            <div class="table-container" style="width: 100%; overflow-x: auto;">
+                                <table class="highlight" style="width: 100%;">
+                                    <thead>
+                                        <tr>
+                                            <th>Topic</th>
+                                            <th>Date</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Pamana website is currently under maintenance</td>
+                                            <td>11/4/24</td>
+                                            <td>
+                                                <a href="#" class="btn-small red edit-btn"><i class="material-icons">edit</i></a>
+                                                <a href="#" class="btn-small grey delete-btn"><i class="material-icons">delete</i></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Introducing Our New Menu Items!</td>
+                                            <td>11/10/24</td>
+                                            <td>
+                                                <a href="#" class="btn-small red edit-btn"><i class="material-icons">edit</i></a>
+                                                <a href="#" class="btn-small grey delete-btn"><i class="material-icons">delete</i></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Holiday Operating Hours Announced</td>
+                                            <td>11/15/24</td>
+                                            <td>
+                                                <a href="#" class="btn-small red edit-btn"><i class="material-icons">edit</i></a>
+                                                <a href="#" class="btn-small grey delete-btn"><i class="material-icons">delete</i></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Staff Recognition: Team Member of the Month</td>
+                                            <td>11/20/24</td>
+                                            <td>
+                                                <a href="#" class="btn-small red edit-btn"><i class="material-icons">edit</i></a>
+                                                <a href="#" class="btn-small grey delete-btn"><i class="material-icons">delete</i></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Join Us for a Community Event</td>
+                                            <td>11/25/24</td>
+                                            <td>
+                                                <a href="#" class="btn-small red edit-btn"><i class="material-icons">edit</i></a>
+                                                <a href="#" class="btn-small grey delete-btn"><i class="material-icons">delete</i></a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Add Modal Structure -->
+<div id="create-announcement-modal" class="modal">
+    <div class="modal-content">
+        <h4>Create Announcement</h4>
+        <div class="input-field">
+            <input id="new-topic" type="text" class="validate">
+            <label for="new-topic">Topic</label>
+        </div>
+        <!-- New Description Field -->
+        <div class="input-field">
+            <textarea id="new-description" class="materialize-textarea"></textarea>
+            <label for="new-description">Description</label>
+        </div>
+        <div class="input-field">
+            <input id="new-date" type="text" class="validate">
+            <label for="new-date">Date</label>
+        </div>
+        <div class="file-field input-field">
+            <div class="btn">
+                <span>Upload Image</span>
+                <input id="new-image" type="file" accept="image/*">
+            </div>
+            <div class="file-path-wrapper">
+                <input class="file-path validate" type="text" placeholder="Upload an image">
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a href="#" class="modal-close waves-effect waves-red btn-flat">Cancel</a>
+        <a href="#" id="save-announcement" class="modal-close waves-effect waves-green btn-flat">Save</a>
+    </div>
+</div>
+
+<!-- Edit Modal Structure -->
+<div id="edit-modal" class="modal">
+    <div class="modal-content">
+        <h4>Edit Announcement</h4>
+        <div class="input-field">
+            <input id="edit-topic" type="text" class="validate">
+            <label for="edit-topic">Topic</label>
+        </div>
+        <!-- New Description Field -->
+        <div class="input-field">
+            <textarea id="edit-description" class="materialize-textarea"></textarea>
+            <label for="edit-description">Description</label>
+        </div>
+        <div class="input-field">
+            <input id="edit-date" type="text" class="validate">
+            <label for="edit-date">Date</label>
+        </div>
+        <div class="file-field input-field">
+            <div class="btn">
+                <span>Upload Image</span>
+                <input id="edit-image" type="file" accept="image/*">
+            </div>
+            <div class="file-path-wrapper">
+                <input class="file-path validate" type="text" placeholder="Upload an image">
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a href="#" class="modal-close waves-effect waves-red btn-flat">Cancel</a>
+        <a href="#" id="save-edit" class="modal-close waves-effect waves-green btn-flat">Save</a>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Initialize MaterializeCSS components
+        var dropdowns = document.querySelectorAll('.dropdown-trigger');
+        M.Dropdown.init(dropdowns, {
+            alignment: 'right',
+            coverTrigger: false
+        });
+
+        var modalElems = document.querySelectorAll('.modal');
+        M.Modal.init(modalElems);
+
+        var editButtons = document.querySelectorAll('.edit-btn');
+        var saveEditButton = document.getElementById('save-edit');
+        var editTopicInput = document.getElementById('edit-topic');
+        var editDateInput = document.getElementById('edit-date');
+        var editImageInput = document.getElementById('edit-image');
+        var currentRow;
+
+        // Add New Announcement Functionality
+        var addAnnouncementButton = document.getElementById('save-announcement');
+        var newTopicInput = document.getElementById('new-topic');
+        var newDateInput = document.getElementById('new-date');
+        var newImageInput = document.getElementById('new-image');
+        var tableBody = document.querySelector('table tbody');
+
+        addAnnouncementButton.addEventListener('click', function () {
+            const topic = newTopicInput.value.trim();
+            const date = newDateInput.value.trim();
+            const image = newImageInput.files[0]; // Optional file input
+
+            // Validate inputs
+            if (!topic || !date) {
+                M.toast({ html: 'Please fill in all required fields!' });
+                return;
+            }
+
+            // Add a new row to the table
+            const newRow = document.createElement('tr');
+            newRow.innerHTML = `
+        <td>${topic}</td>
+        <td>${date}</td>
+        <td>
+            <a href="#" class="btn-small red edit-btn"><i class="material-icons">edit</i></a>
+            <a href="#" class="btn-small grey delete-btn"><i class="material-icons">delete</i></a>
+        </td>
+    `;
+            tableBody.appendChild(newRow);
+
+            // Optional: Handle uploaded image
+            if (image) {
+                console.log("Image uploaded:", image.name);
+            }
+
+            // Clear form inputs
+            newTopicInput.value = '';
+            newDateInput.value = '';
+            newImageInput.value = '';
+
+            M.toast({ html: 'New announcement added successfully!' });
+
+            // Reinitialize event listeners for the new row
+            initializeEditAndDeleteButtons();
+        });
+
+        // Function to handle editing announcements
+        editButtons.forEach(function (button) {
+            button.addEventListener('click', function (event) {
+                event.preventDefault();
+                currentRow = button.closest('tr');
+                var topic = currentRow.querySelector('td:first-child').textContent;
+                var date = currentRow.querySelector('td:nth-child(2)').textContent;
+
+                editTopicInput.value = topic;
+                editDateInput.value = date;
+
+                M.updateTextFields(); // Update Materialize labels
+
+                var modal = document.getElementById('edit-modal');
+                var instance = M.Modal.getInstance(modal);
+                instance.open();
+            });
+        });
+
+        saveEditButton.addEventListener('click', function () {
+            if (currentRow) {
+                var newTopic = editTopicInput.value;
+                var newDate = editDateInput.value;
+                var newImage = editImageInput.files[0];
+
+                if (newTopic) {
+                    currentRow.querySelector('td:first-child').textContent = newTopic;
+                }
+                if (newDate) {
+                    currentRow.querySelector('td:nth-child(2)').textContent = newDate;
+                }
+                if (newImage) {
+                    console.log("Image selected:", newImage.name); // Log or handle the image as needed
+                }
+
+                M.toast({ html: 'Announcement updated successfully!' });
+            }
+        });
+
+        // Function to reinitialize Edit and Delete buttons for new rows
+        function initializeEditAndDeleteButtons() {
+            var editButtons = document.querySelectorAll('.edit-btn');
+            var deleteButtons = document.querySelectorAll('.delete-btn');
+
+            editButtons.forEach(function (button) {
+                button.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    currentRow = button.closest('tr');
+                    var topic = currentRow.querySelector('td:first-child').textContent;
+                    var date = currentRow.querySelector('td:nth-child(2)').textContent;
+
+                    editTopicInput.value = topic;
+                    editDateInput.value = date;
+
+                    M.updateTextFields(); // Update Materialize labels
+
+                    var modal = document.getElementById('edit-modal');
+                    var instance = M.Modal.getInstance(modal);
+                    instance.open();
+                });
+            });
+
+            deleteButtons.forEach(function (button) {
+                button.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    var confirmed = confirm("Are you sure you want to delete this announcement?");
+
+                    if (confirmed) {
+                        var row = button.closest('tr');
+                        row.remove();
+                        M.toast({ html: 'Announcement deleted successfully!' });
+                    }
+                });
+            });
+        }
+
+        // Initialize Edit and Delete buttons for existing rows
+        initializeEditAndDeleteButtons();
+    });
+
+</script>
+

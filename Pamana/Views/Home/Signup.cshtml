@@ -1,0 +1,127 @@
+﻿@{
+    Layout = "~/Views/Shared/_PamanaLayout.cshtml";
+}
+
+
+
+<div class="row" style="margin: unset" ng-init="showTab(currentTab)">
+    <div class="col s6 m6 l6" style="padding: unset; margin: unset">
+        <img id="foodimg" src="~/Content/start-a-restaurant-soft-opening 1.png" style="padding-bottom: 0px" />
+    </div>
+    <div class="col s6 m6 l6" id="col2">
+        <p id="logHead">
+            <span id="headLogin">Sign Up</span>
+            <br />
+            Personal Information is required.
+        </p>
+
+        <br />
+
+        <div class="signTab">
+            <div class="row" id="inputrow">
+                <div class="input-field rounded-input col s12 m12 l12">
+                    <input placeholder=" " id="first_name" type="text" class="validate" ng-model="FName" ng-change="regFirstN()" ng-class="{'invalid-input': regFNameBool}" />
+                    <label for="first_name">First Name</label>
+                </div>
+                <div class="row" style="margin-bottom: 0px; margin-left: 5px">
+                    <div class="col s6 m6 l6">
+                        <span id="errorText" ng-bind="FNameError"></span>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row" id="inputrow">
+                <div class="input-field rounded-input col s12 m12 l12">
+                    <input placeholder="   " id="first_name" type="text" class="validate" ng-model="LName" ng-change="regLastN()" ng-class="{'invalid-input': regLNameBool}" >
+                    <label for="first_name">Last Name</label>
+                </div>
+                <div class="row" style="margin-bottom: 0px; margin-left: 5px">
+                    <div class="col s6 m6 l6">
+                        <span id="errorText" ng-bind="LNameError"></span>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row" id="inputrow" style="margin-bottom: 0px">
+                <div class="input-field rounded-input col s12 m12 l12">
+                    <input placeholder=" " id="first_name" type="text" class="validate" oninput="this.value = this.value.replace(/[^0-9]/g, '')" ng-model="phoneNum" ng-change="regPhoneN()" ng-class="{'invalid-input': phoneBool}">
+                    <label for="first_name">Mobile Number</label>
+                </div>
+                <div class="row" style="margin-bottom: 0px; margin-left: 5px">
+                    <div class="col s6 m6 l6">
+                        <span id="errorText" ng-bind="phoneNumError"></span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="signTab">
+            <div class="row" id="inputrow">
+                <div class="input-field rounded-input col s12 m12 l12">
+                    <input placeholder="example@gmail.com" id="first_name" type="text" class="validate" ng-model="registerEmail" ng-change="regEmail()" ng-class="{'invalid-input': regemailBool}">
+                    <label for="first_name">Email</label>
+                </div>
+                <div class="row" style="margin-bottom: 0px; margin-left: 5px">
+                    <div class="col s6 m6 l6">
+                        <span id="errorText" ng-bind="regEmailErr"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" id="inputrow">
+                <div class="input-field rounded-input col s12 m12 l12">
+                    <input placeholder="   " id="password" type="text" class="validate" ng-model="regPassword" ng-change="regPass()" ng-class="{'invalid-input': regpassBool}">
+                    <label for="password">Password</label>
+                </div>
+                <div class="row" style="margin-bottom: 0px; margin-left: 5px">
+                    <div class="col s6 m6 l6">
+                        <span id="errorText" ng-bind="regpassError"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" id="inputrow" style="margin-bottom: 0px">
+                <div class="input-field rounded-input col s12 m12 l12">
+                    <input placeholder="" id="confirmPass" type="text" class="validate" ng-model="confirmPass" ng-change="regConfPass(regPassword)" ng-class="{'invalid-input': regConfBool}">
+                    <label for="confirmPass">Confirm Password</label>
+                </div>
+                <div class="row" style="margin-bottom: 0px; margin-left: 5px">
+                    <div class="col s6 m6 l6">
+                        <span id="errorText" ng-bind="regConfError"></span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div style="text-align: center; margin-bottom: 10px;">
+            <span class="step"></span>
+            <span class="step"></span>
+        </div>
+
+        <div class="row">
+            <div class="col s12 m12 l12" style="margin-top: 20px;">
+                <div class="row">
+                    <div class="col s6 m6 l6" style="padding: unset; padding-left: 20px; padding-right: 10px;">
+                        <button id="buttonSign1" class="waves-effect waves-light btn" ng-click="nextPrev(-1)">Previous</button>
+                    </div>
+                    <div class="col s6 m6 l6" style="padding: unset; padding-left: 10px;">
+                        <button id="buttonSign2" class="waves-effect waves-light btn" ng-click="nextPrev(1)">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s6 m6 l6" style="margin-bottom: 0px; margin-left: 5px">
+                <p>Have an account?<span> <a href="@Url.Action("Login", "Home")" style="color: red;">Log In.</a></span></p>
+            </div>
+        </div>
+
+    </div>
+</div>
+

@@ -1,0 +1,57 @@
+﻿@{
+    Layout = "~/Views/Shared/_PamanaLayout.cshtml";
+}
+
+<div class="row" style="margin: unset">
+    <div class="col s6 m6 l6" style="padding: unset; margin: unset">
+        <img id="foodimg" src="~/Content/start-a-restaurant-soft-opening 1.png" height="650" width="765" style="padding-bottom: 0px"/>
+    </div>
+    <div class="col s6 m6 l6" id="col2">
+        <p id="logHead">
+            <span id="headLogin">Log In</span>
+            <br />
+            Account Credentials are required.
+        </p>
+
+        <br />
+
+
+        <div class="row" id="inputrow">
+            <div class="input-field rounded-input col s12 m12 l12">
+                <input placeholder="example@gmail.com" id="first_name" type="text" ng-model="email" ng-change="emailValidate()" ng-class="{'invalid-input': emailBool}">
+                <label for="first_name">Email</label>
+            </div>
+            <div class="row" style="margin-bottom: 0px; margin-left: 5px">
+                <div class="col s6 m6 l6">
+                    <span id="errorText" ng-bind="emailError"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" id="inputrow" style="margin-bottom: 0px">
+            <div class="input-field rounded-input col s12 m12 l12">
+                <input placeholder="   " id="first_name" type="text" class="validate" ng-model="password" ng-change="passValidate()" ng-class="{'invalid-input': passBool}">
+                <label for="first_name">Password</label>
+            </div>
+            <div class="row" style="margin-bottom: 0px; margin-left: 5px">
+                <div class="col s6 m6 l6">
+                    <span id="errorText" ng-bind="passError"></span>
+                </div>
+                <p id="forgotPass"><a href="@Url.Action("Forgotpass", "Home")">Forgot Password?</a></p>
+            </div>
+        </div>
+        <div class="row" >
+            <div class="col s6 m6 l6" style="margin-top: 10px; margin-bottom: 0px; margin-left: 5px">
+                <a id="loginbutton" class="waves-effect waves-light btn" ng-click="login()">Log In</a>
+            </div>
+        </div>
+
+        <div class="row" >
+            <div class="col s6 m6 l6" style="margin-bottom: 0px; margin-left: 5px">
+                <p>Don't have an account?<span> <a href="@Url.Action("Signup", "Home")"  style="color: red;">Sign Up.</a></span></p>
+            </div>
+        </div>
+
+    </div>
+</div>
+</div>

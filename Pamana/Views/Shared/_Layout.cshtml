@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PAMANA - Admin</title>
+
+    <!-- MaterializeCSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="~/Content/styles.css" />
+    <link rel="stylesheet" href="/DataTables/datatables.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"></script>
+    <script src="~/Scripts/app.js"></script>
+</head>
+<body ng-app="Dashboard" ng-controller="DashboardController">
+    <!-- Main Layout -->
+    <div class="row">
+        <div class="col s2 m2 l2">
+            <div>
+
+            </div>
+            <div class="sidebar">
+                <div class="col s2 grey lighten-3 sidebar" style="height: 100vh; padding: 20px 10px;">
+                    <div class="center-align" style="margin-bottom: 20px;">
+                        <img src="/Content/PAMANA Logo.png" alt="PAMANA Logo" style="width: 200px; height: auto;" />
+                        <ul>
+                            <li class="sidebar-item active">
+                                <a href="@Url.Action("Dashboard", "Home")" class="waves-effect white-text"><i class="material-icons">dashboard</i>Dashboard</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="@Url.Action("AdminReservations", "Home")" class="waves-effect grey-text"><i class="material-icons">receipt_long</i>Reservations</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="@Url.Action("AdminAnnouncements", "Home")" class="waves-effect grey-text"><i class="material-icons">announcement</i>Announcements</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="@Url.Action("AdminFeedbacks", "Home")" class="waves-effect grey-text"><i class="material-icons">comment</i>Feedbacks</a>
+                            </li>
+                            <li id="logLi">
+                                <a href="#logPrompt" class="waves-effect modal-trigger"><i class="material-icons">logout</i>Log Out</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div id="logPrompt" class="modal custom-modal">
+                    <div class="modal-content">
+                        <h5 class="center-align">
+                            <span class="material-icons" style="vertical-align: middle; font-size: 36px;">logout</span>
+                        </h5>
+                        <p class="center-align">Are you sure you want to log out?</p>
+                    </div>
+                    <div class="modal-footer center-align">
+                        <a href="#!" class="modal-close waves-effect waves-light btn grey">Cancel</a>
+                        <a href="@Url.Action("AdminLogin", "Home")" class="modal-close waves-effect waves-light btn red" ng-click="logOut()">Confirm</a>
+                    </div>
+                </div>
+
+                <style>
+                    /* Custom styling to make the modal square */
+                    .custom-modal {
+                        width: 300px !important; /* Fixed width */
+                        height: 300px !important; /* Fixed height */
+                        border-radius: 8px; /* Optional: Rounded corners */
+                    }
+
+                        /* Center content within the square modal */
+                        .custom-modal .modal-content {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                            height: calc(100% - 64px); /* Adjust height to exclude footer */
+                            text-align: center;
+                        }
+
+                        /* Adjust footer alignment */
+                        .custom-modal .modal-footer {
+                            display: flex;
+                            justify-content: space-evenly;
+                        }
+                </style>
+
+                <script>
+                    // Initialize Materialize modal
+                    document.addEventListener('DOMContentLoaded', function () {
+                        const modals = document.querySelectorAll('.modal');
+                        M.Modal.init(modals);
+                    });
+                </script>
+
+
+            </div>
+        </div>
+        <div class="col s10 m10 l10">
+            <div class="col s12" style="position: ">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+
+   
+
+    <script src="~/Scripts/jquery-3.7.0.min.js"></script>
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/Holy-Scripts/Module.js"></script>
+    <script src="~/Scripts/Holy-Scripts/Service.js"></script>
+    <script src="~/Scripts/Holy-Scripts/Contoroller.js"></script>
+    <script src="~/Scripts/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+</body>
+</html>

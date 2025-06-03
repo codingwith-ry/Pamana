@@ -1,0 +1,60 @@
+﻿@{
+    Layout = "~/Views/Shared/_PamanaLayout.cshtml";
+}
+
+
+@{
+    Layout = "~/Views/Shared/_PamanaLayout.cshtml";
+}
+
+
+
+<div class="row" style="margin: unset">
+    <div class="col s6 m6 l6" style="padding: unset; margin: unset">
+        <img id="foodimg" src="~/Content/start-a-restaurant-soft-opening 1.png" height="650" width="765" style="padding-bottom: 0px" />
+    </div>
+    <div class="col s6 m6 l6" id="col2">
+        <p id="logHead">
+            <span id="headLogin">Change Password</span>
+            <br />
+            Change your password.
+        </p>
+
+        <br />
+
+
+        <div class="row" id="inputrow">
+            <div class="input-field rounded-input col s12 m12 l12">
+                <input placeholder="123456" id="first_name" type="text" class="validate">
+                <label for="first_name">Enter New Password</label>
+            </div>
+            <div class="row" style="margin-bottom: 0px; margin-left: 5px">
+                <div class="col s6 m6 l6">
+                    <span id="errorText">Error</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" id="inputrow">
+            <div class="input-field rounded-input col s12 m12 l12">
+                <input placeholder="123456" id="first_name" type="text" class="validate">
+                <label for="first_name">Confirm Password</label>
+            </div>
+            <div class="row" style="margin-bottom: 0px; margin-left: 5px">
+                <div class="col s6 m6 l6">
+                    <span id="errorText">Error</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s6 m6 l6" style="margin-top: 10px; margin-bottom: 0px; margin-left: 5px">
+                <a id="changebutton" class="waves-effect waves-light btn" href="@Url.Action("Login", "Home")">Change Password</a>
+            </div>
+        </div>
+
+        
+
+    </div>
+</div>
+</div>

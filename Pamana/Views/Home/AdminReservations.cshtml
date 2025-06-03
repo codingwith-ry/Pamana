@@ -1,0 +1,232 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div style="display: flex;">
+    <div class="main-content" style="flex: 1; display: flex; justify-content: center; flex-direction: column;">
+        <!-- Main Content -->
+        <div class="col s12" style="padding: 50px; ">
+            <div class="row" style="display: flex; align-items: center; justify-content: space-between; margin: 0;">
+                <!-- Announcements Title -->
+                <div>
+                    <h4 style="margin: 0;"><b>Reservations</b></h4>
+                    <p style="margin: 0;">As of November 2024</p>
+                </div>
+
+                <!-- Filters Section -->
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <select class="browser-default" style="width: 120px;">
+                        <option value="" disabled selected>November</option>
+                        <option value="1">December</option>
+                        <option value="2">January</option>
+                    </select>
+                    <select class="browser-default" style="width: 120px;">
+                        <option value="" disabled selected>2024</option>
+                        <option value="1">2023</option>
+                        <option value="2">2025</option>
+                    </select>
+                </div>
+
+                <!-- Admin Dropdown -->
+                <div style="display: flex; align-items: center;">
+                    <a class="dropdown-trigger btn-flat" href="#" data-target="admin-dropdown" style="color: #C30000; display: flex; align-items: center; margin-left: 110%;">
+                        <i class="material-icons left">account_circle</i> Administrator
+                        <i class="material-icons right">arrow_drop_down</i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Dropdown Structure -->
+            <ul id="admin-dropdown" class="dropdown-content">
+                <li><a href="@Url.Action("Profile", "Home")" style="color: #C30000;">Profile</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Upcoming Reservations Section -->
+<div class="row" style="width: 100%; padding-left: 50px;">
+    <div class="col s12">
+        <div class="card">
+            <div class="card-content">
+                <span class="card-title">Upcoming Reservations</span>
+                <table id="up-reserve" class="display highlight responsive-table">
+                    <thead>
+                        <tr>
+                            <th>User</th>
+                            <th>Reservation Date</th>
+                            <th>Time</th>
+                            <th>Number of People</th>
+                            <th>Email</th>
+                            <th>Contact Number</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Ryan Regulacion</td>
+                            <td>11/4/2024</td>
+                            <td>7:00 PM</td>
+                            <td>2</td>
+                            <td>ryan@gmail.com</td>
+                            <td>09112233445</td>
+                        </tr>
+                        <tr>
+                            <td>Owen Trinidad</td>
+                            <td>11/5/2024</td>
+                            <td>12:00 PM</td>
+                            <td>2</td>
+                            <td>owen@gmail.com</td>
+                            <td>09123456789</td>
+                        </tr>
+                        <tr>
+                            <td>Stephen Hao</td>
+                            <td>11/5/2024</td>
+                            <td>7:00 PM</td>
+                            <td>1</td>
+                            <td>steepin@gmail.com</td>
+                            <td>09090909090</td>
+                        </tr>
+                        <tr>
+                            <td>Daryl Tumaneng</td>
+                            <td>11/6/2024</td>
+                            <td>6:00 PM</td>
+                            <td>4</td>
+                            <td>daryl@gmail.com</td>
+                            <td>09987654321</td>
+                        </tr>
+                        <tr>
+                            <td>Dominic Xandy Adino</td>
+                            <td>11/8/2024</td>
+                            <td>6:00 PM</td>
+                            <td>3</td>
+                            <td>doms@gmail.com</td>
+                            <td>09987654321</td>
+                        </tr>
+                        <tr>
+                            <td>Ernest Calalin</td>
+                            <td>11/5/2024</td>
+                            <td>7:30 PM</td>
+                            <td>1</td>
+                            <td>ernest@gmail.com</td>
+                            <td>09987654321</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Successful Reservations Section -->
+<div class="row" style="width: 100%; padding-left: 50px;">
+    <div class="col s12">
+        <div class="card">
+            <div class="card-content">
+                <span class="card-title">Successful Reservations</span>
+                <table id="success-reserve" class="display highlight responsive-table">
+                    <thead>
+                        <tr>
+                            <th>User</th>
+                            <th>Reservation Date</th>
+                            <th>Time</th>
+                            <th>Number of People</th>
+                            <th>Email</th>
+                            <th>Contact Number</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Ryan Regulacion</td>
+                            <td>11/4/2024</td>
+                            <td>7:00 PM</td>
+                            <td>2</td>
+                            <td>ryan@gmail.com</td>
+                            <td>09112233445</td>
+                        </tr>
+                        <tr>
+                            <td>Owen Trinidad</td>
+                            <td>11/5/2024</td>
+                            <td>12:00 PM</td>
+                            <td>2</td>
+                            <td>owen@gmail.com</td>
+                            <td>09123456789</td>
+                        </tr>
+                        <tr>
+                            <td>Stephen Hao</td>
+                            <td>11/5/2024</td>
+                            <td>7:00 PM</td>
+                            <td>1</td>
+                            <td>steepin@gmail.com</td>
+                            <td>09090909090</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Cancelled Reservations Section -->
+<div class="row" style="width: 100%; padding-left: 50px;">
+    <div class="col s12">
+        <div class="card">
+            <div class="card-content">
+                <span class="card-title">Cancelled Reservations</span>
+                <table id="cancel-reserve" class="display highlight responsive-table">
+                    <thead>
+                        <tr>
+                            <th>User</th>
+                            <th>Reservation Date</th>
+                            <th>Time</th>
+                            <th>Number of People</th>
+                            <th>Email</th>
+                            <th>Contact Number</th>
+                            <th>Reason</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Ryan Regulacion</td>
+                            <td>11/4/2024</td>
+                            <td>7:00 PM</td>
+                            <td>2</td>
+                            <td>ryan@gmail.com</td>
+                            <td>09112233445</td>
+                            <td><b>Admin Cancellation</b></td>
+                        </tr>
+                        <tr>
+                            <td>Owen Trinidad</td>
+                            <td>11/5/2024</td>
+                            <td>12:00 PM</td>
+                            <td>2</td>
+                            <td>owen@gmail.com</td>
+                            <td>09123456789</td>
+                            <td><b>User Cancellation</b></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const dropdowns = document.querySelectorAll('.dropdown-trigger');
+        M.Dropdown.init(dropdowns, {
+            alignment: 'right',
+            coverTrigger: false
+        });
+
+        const tables = ['#up-reserve', '#success-reserve', '#cancel-reserve'];
+        tables.forEach(table => {
+            new DataTable(table, {
+                paging: true,
+                lengthChange: false,
+                pageLength: 5,
+                dom: 'frtip'
+            });
+        });
+    });
+</script>

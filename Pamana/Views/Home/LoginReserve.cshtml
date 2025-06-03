@@ -1,0 +1,70 @@
+﻿@{
+    Layout = "~/Views/Shared/_LoggedInPamana.cshtml";
+}
+
+
+
+<div class="row">
+    <div class="col s3 m3 l3"></div>
+    <div class="col s6 m6 l6" id="row1">
+        <div class="card-panel white">
+            <p id="reserb-header" class="inter-bold"><span id="reserb">Reserve Now</span></p><hr />
+            <img src="~/Content/sisig.png" width="660px" /><br />
+            <p class="black-text">
+                <span>
+                    <b>PAMANA</b> Filipino Restaurant<br />
+                    <br />
+                    <p class="bold icon-text">
+                        <i class="material-icons" style="margin: unset; margin-right: 5px">location_on</i> Bldg. B, By the Bay, Mall of Asia<br />
+
+                    </p>
+                    <span class="bold icon-text">Pasay City, Metro Manila</span>
+                    <p class="icon-text"><i class="material-icons" style="margin: unset; margin-right: 5px">access_time</i> Opens 11:30 AM - 11:30 PM daily.</p>
+                    
+                </span>
+            </p>
+            <div class="row">
+                <div class="col s12 m12 l12">
+                    <div class="row">
+                        <div class="input-field col s4 m4 l4">
+                            <i class="material-icons prefix">date_range</i>
+                            <input type="text" class="datepicker" placeholder="Date" ng-model="reservationDate">
+                        </div>
+
+                        <div class="input-field col s4 m4 l4">
+                            <i class="material-icons prefix">access_time</i>
+                            <input type="text" class="timepicker" placeholder="Time" ng-model="reservationTime">
+                        </div>
+
+                        <div class="input-field col s4 m4 l4">
+                            <i class="material-icons prefix">person</i>
+                            <input type="text" placeholder="People" ng-model="reservationPeople" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                            <div class="right-align" style="margin-top: 30px;">
+                                <button id="bookNow" class="waves-effect waves-light btn" ng-click="reserve()">Book Now</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Initialize Time Picker
+            var timeElems = document.querySelectorAll('.timepicker');
+            var timeInstances = M.Timepicker.init(timeElems, {
+                defaultTime: 'now',
+                twelveHour: true, // If you want to use 24-hour format
+            });
+
+            // Initialize Date Picker
+            var dateElems = document.querySelectorAll('.datepicker');
+            var dateInstances = M.Datepicker.init(dateElems, {
+                format: 'mmm dd, yyyy', // Define the date format
+                autoClose: true, // Close the datepicker automatically after selecting a date
+            });
+        });
+</script>

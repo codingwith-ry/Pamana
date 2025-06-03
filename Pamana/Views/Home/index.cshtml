@@ -1,0 +1,61 @@
+﻿@{
+    Layout = "~/Views/Shared/_PamanaLayout.cshtml";
+}
+
+<div>
+    <br />
+    <br />
+    <div class="row">
+        <div class="col s6 m6 l6" id="row1">
+            <p id="text1" class="inter-bold">Where delicacies cannot be <span id="kwanti">quantified.</span></p>
+            <br />
+            <p id="text1" class="inter-light">
+                Offering a variety of exquisite foods, Pamana<br />
+                ensures its customers of a night that will be<br />
+                remembered through the restaurant’s infamous<br />
+                dishes, that offers class on an affordable price.<br />
+            </p>
+            <a href="@Url.Action("ReserveNow", "Home")" id="reserveButton" class="waves-effect waves-light btn">Reserve Now</a>
+        </div>
+
+        <div class="col s6 m6 l6" id="row1">
+            <img src="~/Content/meal1.png" width="600px" />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col s6 m6 l6" id="row1">
+            <div class="row">
+                <div class="col s6 m6 l6" style="padding-left: 1em;">
+                    <img src="~/Content/nodils.png" width="320px"/>
+                </div>
+
+                <div class="col s6 m6 l6">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col s6 m6 l6">
+
+                </div>
+
+                <div class="col s6 m6 l6">
+                    <img src="~/Content/kaen.png" width="320px"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="col s6 m6 l6" id="row1">
+            <p id="text1" class="inter-bold">About Us</p>
+            <br />
+            <p id="text1" class="inter-light">
+                Offering a variety of exquisite foods, Pamana<br />
+                ensures its customers of a night that will be<br />
+                remembered through the restaurant’s infamous<br />
+                dishes, that offers class on an affordable price.<br />
+            </p>
+
+            <a href="@Url.Action("About", "Home")" id="reserveButton" class="waves-effect waves-light btn">Learn More</a>
+        </div>
+    </div>
+</div>

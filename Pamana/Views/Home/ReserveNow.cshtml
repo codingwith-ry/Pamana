@@ -1,0 +1,52 @@
+﻿@{
+    Layout = "~/Views/Shared/_PamanaLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col s3 m3 l3"></div>
+    <div class="col s6 m6 l6" id="row1">
+        <div class="card-panel white">
+            <p id="reserb-header" class="inter-bold"><span id="reserb">Reserve Now</span></p><hr />
+            <img src="~/Content/sisig.png" width="660px" /><br />
+            <p class="black-text">
+                <span>
+                    <b>PAMANA</b> Filipino Restaurant<br />
+                    <br />
+                    <a class="black-text text-lighten-4"><i class="tiny material-icons">location_on</i> Bldg. B, By the Bay, Mall of Asia</a><br />
+                    <a class="black-text text-lighten-4"> Pasay City, Metro Manila   |</a><br />
+                    <br />
+                    <span class="black-text text-lighten-4"><i class="material-icons prefix valign-wrapper" style="font-size: 18px;">access_time</i> Opens 11:30 AM - 11:30 PM daily.</span><br />
+                </span>
+            </p>
+            <div class="row">
+                <div class="col s12 m12 l12">
+                    <div class="row">
+                        <div class="input-field col s4 m4 l4">
+                            <i class="material-icons prefix">date_range</i>
+                            <input type="text" class="datepicker" placeholder="Date">
+                        </div>
+
+                        <div class="input-field col s4 m4 l4">
+                            <i class="material-icons prefix">access_time</i>
+                            <input type="text" class="timepicker" placeholder="Time" ng-model="time">
+                        </div>
+
+                        <div class="input-field col s4 m4 l4">
+                            <i class="material-icons prefix">person</i>
+                            <input type="text" placeholder="People">
+                            <div class="right-align" style="margin-top: 30px;">
+                                <button id="bookNow" class="waves-effect waves-light btn" ng-click="timePrompt()">Book Now</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+</div>
+
+    

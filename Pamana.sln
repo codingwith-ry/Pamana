@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35312.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pamana", "Pamana\Pamana.csproj", "{873E4956-DDB3-4660-828A-BC28AC1607BF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{873E4956-DDB3-4660-828A-BC28AC1607BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{873E4956-DDB3-4660-828A-BC28AC1607BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{873E4956-DDB3-4660-828A-BC28AC1607BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{873E4956-DDB3-4660-828A-BC28AC1607BF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BBC3472D-3E60-4923-B646-7318A076FB37}
+	EndGlobalSection
+EndGlobal
